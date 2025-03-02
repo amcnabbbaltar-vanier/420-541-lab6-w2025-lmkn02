@@ -20,20 +20,16 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
+    // Modify this function
     public void IncrementScore()
     {
         score++;
         Debug.Log("Score: " + score);
 
-        if (score >= targetScore)
-        {
-            LoadNewScene();
-        }
     }
-
-    void LoadNewScene()
+    // Change the name of this Function 
+    public void LoadNextScene()
     {
-        SceneManager.LoadScene("VictoryScene"); // Use your new scene's name
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
